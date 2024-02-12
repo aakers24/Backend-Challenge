@@ -1,0 +1,9 @@
+{
+    "insuranceCompanies": [
+        { "company": "company1", "quote": 500 },
+        { "company": "company2", "quote": 505 },
+        { "company": "company3", "quote": 495 },
+        { "company": "company4", "quote": 502 },
+        { "company": "company5", "quote": 508 }
+    ]
+}

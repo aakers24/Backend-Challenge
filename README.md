@@ -1,58 +1,25 @@
-# challenge
+# README
 
-## Node.js Backend Challenge: Insurance Policy Quote Integration
+### Prerequisites
 
-### Scenario:
-You work for UTSafe Insurance, a fictitious insurance company in Utha. Your task is to create a backend service that integrates with an external insurance dispatcher API, fetches quotes based on user input, and returns the best three quotes to the front-end.
+* Node.js and npm are installed on the system. Typescript is also required if you want to transpile the typescript code, but the transpiled js code is included by default.
 
-### Requirements:
+* A PostgreSQL server is running on the system on the default port with a user postgres:samplePass and the DB utsafedb.
 
-#### Setup:
-Initialize a new Node.js project using TypeScript.
-Set up a PostgreSQL database using your preferred ORM (e.g., TypeORM, Sequelize).
+* JSON-Server running mockAPI.json on port 4000.
 
-#### API Endpoints:
-`/api/quotes`: POST request that takes user details (name, age, car model, years of driving experience) and fetches insurance quotes.
-`/api/quotes/best-three`: GET request that retrieves the best three quotes (lowest price) from the previously fetched quotes.
+---
 
-#### Integration:
-Integrate with a mocked insurance dispatcher API. Use tools like json-server or MirageJS to mock the external API.
+### Instructions
 
-#### Database:
-Store all fetched quotes in the PostgreSQL database with relevant user details.
+* Run a PostgreSQL server on the default port with user postgres:samplePass and the DB utsafedb created.
 
-#### Error Handling:
-Properly handle potential errors like invalid user input, API failures, etc.
+* Run the mock API with `npx json-server --watch mockAPI.json --port 4000` from the Project directory.
 
-#### Documentation:
-Provide a brief README detailing how to set up and run the project.
+* From the Project directory, run `node src/index.js`.
 
-#### Bonus (not required, but good to have):
-- Implement caching to speed up repeated requests.
-- Include unit and integration tests.
-- Implement a rate-limiting mechanism to avoid overloading the mocked dispatcher API.
-- Containerize the application using Docker.
-- Use an AWS service, like AWS Lambda, to showcase a serverless deployment.
+* Open a web browser and navigate to `localhost:3000/`.
 
-#### Evaluation Points (Total: 100 points):
+* Input desired data into the first 4 fields and submit it with the "Generate Quotes" button. If the inputs are valid, this will fetch the quotes from the mock API and save the information in the database.
 
-- Project Setup (20 points)
-- Proper TypeScript setup: 10 points.
-- PostgreSQL and ORM setup: 10 points.
-- API Endpoints (25 points)
-- Correct implementation of /api/quotes: 15 points.
-- Correct implementation of /api/quotes/best-three: 10 points.
-- Integration & Database (25 points)
-- Successful integration with the mocked API: 10 points.
-- Proper data storage and retrieval with PostgreSQL: 15 points.
-- Error Handling (10 points)
-- Comprehensive error handling: 10 points.
-- Documentation (10 points)
-- Clear and concise README: 10 points.
-
-#### Bonus Points (up to 10 points each)
-- Caching: 5 points.
-- Testing: 5 points.
-- Rate limiting: 5 points.
-- Docker: 5 points.
-- Serverless deployment with AWS: 10 points.
+* To fetch the best 3 quotes for a name that has been input via the "Generate Quotes" form, input the same name into the second "Name" field and press the "Get Best Quotes" button. If the input is valid, it will fetch the 3 best quotes from the database. If the input is valid but the user does not exist, nothing will be returned.

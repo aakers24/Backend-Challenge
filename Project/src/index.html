@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Backend Challenge</title>
+</head>
+<body>
+
+
+    
+    <!-- (name, age, car model, years of driving experience) -->
+    <form action="/api/quotes" method="POST">
+
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name"> <br/>
+
+        <label for="age">Age:</label>
+        <input type="text" id="age" name="age"> <br/>
+
+        <label for="carModel">Car Model:</label>
+        <input type="text" id="carModel" name="carModel"> <br/>
+
+        <label for="YODE">Years of Driving Experience:</label>
+        <input type="text" id="YODE" name="YODE"> <br/>
+
+        <input type="submit" value="Generate Quotes">
+
+    </form>
+
+
+
+    <br/><br/><br/>
+
+
+
+    <form action="/api/quotes/best-three" method="GET">
+
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name"> <br/>
+
+        <input type="submit" value="Get Best Quotes">
+
+    </form>
+
+
+
+</body>
+</html>
